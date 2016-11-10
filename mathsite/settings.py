@@ -117,5 +117,8 @@ if DEBUG:
     STATIC_ROOT = os.path.join(BASE_DIR, 'static', 'static_only')
     MEDIA_ROOT = os.path.join(BASE_DIR, 'static', 'media')
     STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static', 'static'), ]
-
+else:
+    STATICFILES_DIRS = (
+        os.path.join(BASE_DIR, 'static'),
+    )
 STATICFILES_STORAGE = 'whitenoise.django.GzipManifestStaticFilesStorage'
