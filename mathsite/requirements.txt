@@ -1,2 +1,0 @@
-Django==1.10.3
-dj-database-url==0.4.1
