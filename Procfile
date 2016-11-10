@@ -1,1 +1,1 @@
-web: gunicorn MySite.wsgi --preload --log-file -
+web: gunicorn mathsite.wsgi --preload --log-file -
