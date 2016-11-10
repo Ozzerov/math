@@ -1,0 +1,1 @@
+SECRET_KEY = '*49=ddmtjui0ssjlsd_-jy#c6ua8&ikj#(_u+91pm%8ub8c2io'
