@@ -1,0 +1,6 @@
+{% extends 'base.html' %}
+{% block content %}
+    {% for theme in themes %}
+        <h1>{{ theme.theme }}</h1>
+    {% endfor %}
+{% endblock %}
