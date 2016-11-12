@@ -1,6 +1,10 @@
 {% extends 'base.html' %}
 {% block content %}
-    {% for theme in themes %}
-        <h1>{{ theme.theme }}</h1>
-    {% endfor %}
+<div class="container col-md-offset-3 col-md-2">
+        <ul class="nav nav-pills nav-stacked">
+            {% for theme in themes %}
+                <li role="presentation"><a>{{ theme.theme }}</a></li>
+            {% endfor %}
+        </ul>
+    </div>
 {% endblock %}

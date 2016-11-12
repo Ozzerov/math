@@ -11,7 +11,7 @@ def home(request):
 
 
 def formulas(request, subject):
-    themes = Theme.objects.filter(subject=subject)
+    themes = Theme.objects.filter(subject=subject).order_by('order')
 
     # themes = Formula.objects.raw("""
     # SELECT theme

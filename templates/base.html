@@ -14,14 +14,15 @@
     <![endif]-->
 </head>
 <body>
-<div class="container">
-    {% include 'header.html' %}
+{% include 'header.html' %}
 
-    {% block content %}
-    {% endblock %}
 
-    {% include 'footer.html' %}
-</div>
+
+
+{% block content %}
+{% endblock %}
+
+{% include 'footer.html' %}
 
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
