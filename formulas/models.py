@@ -1,8 +1,6 @@
 from django.db import models
 
 
-# Create your models here.
-
 class Subject(models.Model):
     order = models.IntegerField()
     subject = models.CharField(max_length=16)
@@ -25,6 +23,9 @@ class Theme(models.Model):
     class Meta:
         ordering = ('order',)
 
+    def formulas(self):
+        return Formula.objects.filter(theme=self)
+
 
 class Formula(models.Model):
     order = models.IntegerField()
@@ -33,4 +34,4 @@ class Formula(models.Model):
     formula = models.TextField()
 
     class Meta:
-        ordering = ('order',)
+        ordering = ('theme__order', 'order',)
