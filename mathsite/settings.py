@@ -24,10 +24,12 @@ SECRET_KEY = os.environ.get('DJANGO_SECRET_KEY')
 if not SECRET_KEY:
     from secret import SECRET_KEY, DATABASE_URL
 
+    os.environ['DATABASE_URL'] = DATABASE_URL
+
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['wegoplaces.herokuapp.com', ]
+ALLOWED_HOSTS = ['wegoplaces.herokuapp.com', '127.0.0.1']
 
 # Application definition
 
@@ -38,6 +40,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'formulas',
 ]
 
 MIDDLEWARE = [
