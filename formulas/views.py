@@ -10,8 +10,9 @@ def home(request):
     return render(request, 'home.html', context)
 
 
-def formulas(request, subject):
-    themes = Theme.objects.filter(subject=subject).order_by('order')
+def subjects(request, subject):
+    themes = Theme.objects.filter(subject__subject=subject)
+    formulas = Formula.objects.filter(theme__subject__subject=subject)
 
     # themes = Formula.objects.raw("""
     # SELECT theme
@@ -23,4 +24,4 @@ def formulas(request, subject):
     # for t in themes:
     #     print(t)
 
-    return render(request, 'formulas.html', {'themes': themes})
+    return render(request, 'subjects.html', {'themes': themes, 'formulas': formulas})

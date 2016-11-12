@@ -11,10 +11,10 @@
         </div>
         <div id="navbar" class="navbar-collapse collapse">
             <ul class="nav navbar-nav">
-                <li {% if 'formulas/algebra' in request.path %}class="active"{% endif %}>
+                <li {% if 'subjects/algebra' in request.path %}class="active"{% endif %}>
                     <a href="{% url 'subject' 'algebra' %}">Object</a>
                 </li>
-                <li {% if 'formulas/geometry' in request.path %}class="active"{% endif %}>
+                <li {% if 'subjects/geometry' in request.path %}class="active"{% endif %}>
                     <a href="{% url 'subject' 'geometry' %}">Subject</a>
                 </li>
             </ul>
