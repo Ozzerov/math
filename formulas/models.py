@@ -3,7 +3,9 @@ from django.db import models
 
 class Subject(models.Model):
     order = models.IntegerField()
-    subject = models.CharField(max_length=16)
+    subject = models.CharField(max_length=16, primary_key=True)
+    header = models.CharField(max_length=16, null=True)
+    description = models.TextField(null=True)
 
     def __str__(self):
         return self.subject

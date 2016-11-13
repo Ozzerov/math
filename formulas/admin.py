@@ -6,7 +6,7 @@ from .models import Subject, Theme, Formula
 
 
 class SubjectAdmin(admin.ModelAdmin):
-    list_display = ('order', 'subject')
+    list_display = ('order', 'subject', 'description')
 
 
 class ThemeAdmin(admin.ModelAdmin):

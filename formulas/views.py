@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from .models import Theme
+from .models import Subject, Theme
 
 
 def home(request):
@@ -8,5 +8,7 @@ def home(request):
 
 
 def subjects(request, subject):
-    themes = Theme.objects.filter(subject__subject=subject)
-    return render(request, 'subjects.html', {'themes': themes})
+    s = Subject.objects.get(pk=subject)
+    themes = Theme.objects.filter(subject__pk=subject)
+
+    return render(request, 'subjects.html', {'subject': s, 'themes': themes})
