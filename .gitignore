@@ -3,3 +3,4 @@ secret.py
 formulas/__pycache__/
 mathsite/__pycache__/
 __pycache__/
+formulas/migrations/

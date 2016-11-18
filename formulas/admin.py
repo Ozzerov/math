@@ -14,7 +14,7 @@ class ThemeAdmin(admin.ModelAdmin):
 
 
 class FormulaAdmin(admin.ModelAdmin):
-    list_display = ('order', 'theme', 'header', 'formula',)
+    list_display = ('order', 'theme', 'header', 'formula', 'image')
 
 
 admin.site.register(Subject, SubjectAdmin)
