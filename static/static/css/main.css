@@ -4,6 +4,9 @@ body {
 h4 {
   color: #337ab7; }
 
+img {
+  width: 100%; }
+
 .footer {
   position: absolute;
   bottom: 0;

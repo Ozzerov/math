@@ -6,6 +6,19 @@
                 <li><a data-toggle="tab" href="#{{ theme.theme }}">{{ theme.theme }}</a></li>
             {% endfor %}
         </ul>
+
+        <div class="tab-content">
+            {% for theme in themes %}
+                <div id="{{ theme.theme }}" class="tab-pane fade">
+                    {% for formula in theme.formulas %}
+                        {% if formula.image %}
+                            <img src="{{ formula.image }}">
+                        {% endif %}
+                    {% endfor %}
+                </div>
+            {% endfor %}
+        </div>
+
     </div>
     <div class="col-sm-9 col-md-4">
         <div class="tab-content">
