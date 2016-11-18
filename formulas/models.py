@@ -34,7 +34,7 @@ class Formula(models.Model):
     theme = models.ForeignKey(Theme)
     header = models.CharField(max_length=64, null=True)
     formula = models.TextField()
-    image = models.CharField(max_length=256, null=True)
+    image = models.CharField(max_length=256, null=True, blank=True)
 
     class Meta:
         ordering = ('theme__order', 'order',)
