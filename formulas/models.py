@@ -32,7 +32,7 @@ class Theme(models.Model):
 class Formula(models.Model):
     order = models.IntegerField()
     theme = models.ForeignKey(Theme)
-    header = models.CharField(max_length=32, null=True)
+    header = models.CharField(max_length=64, null=True)
     formula = models.TextField()
     image = models.CharField(max_length=256, null=True)
 
