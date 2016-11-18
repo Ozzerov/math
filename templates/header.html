@@ -17,6 +17,9 @@
                 <li {% if 'subjects/geometry' in request.path %}class="active"{% endif %}>
                     <a href="{% url 'subject' 'geometry' %}">Геометрия</a>
                 </li>
+                <li {% if 'subjects/trigonometry' in request.path %}class="active"{% endif %}>
+                    <a href="{% url 'subject' 'trigonometry' %}">Тригонометрия</a>
+                </li>
             </ul>
             <ul class="nav navbar-nav navbar-right">
                 <li class="dropdown">
