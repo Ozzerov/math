@@ -1,39 +1,35 @@
 {% extends 'base.html' %}
 {% block content %}
-    <div class="col-md-4 col-lg-offset-2 col-lg-3">
-        <ul class="nav nav-pills nav-stacked">
+    <div class="col-sm-12 col-md-offset-1 col-md-10 col-lg-offset-2 col-lg-8">
+        <ul class="nav nav-pills">
             {% for theme in themes %}
                 <li><a data-toggle="tab" href="#{{ theme.theme }}">{{ theme.theme }}</a></li>
             {% endfor %}
         </ul>
-
-        <div class="tab-content">
-            {% for theme in themes %}
-                <div id="{{ theme.theme }}" class="tab-pane fade">
-                    {% for formula in theme.formulas %}
-                        {% if formula.image %}
-                            <img src="{{ formula.image }}">
-                        {% endif %}
-                    {% endfor %}
-                </div>
-            {% endfor %}
-        </div>
-
     </div>
-    <div class="col-md-8 col-lg-5">
-        <div class="tab-content">
-            <div id="description" class="tab-pane fade active in">
-                <h4>{{ subject.header }}</h4>
-                <p>{{ subject.description }}</p>
-            </div>
-            {% for theme in themes %}
-                <div id="{{ theme.theme }}" class="tab-pane fade">
-                    {% for formula in theme.formulas %}
-                        <h4>{{ formula.header }}</h4>
-                        <p>{{ formula.formula|linebreaks }}</p>
-                    {% endfor %}
-                </div>
-            {% endfor %}
+    <div class="tab-content col-sm-6 col-md-offset-1 col-md-5 col-lg-offset-2 col-lg-4">
+        <div id="description" class="tab-pane fade active in">
+            <h4>{{ subject.header }}</h4>
+            <p>{{ subject.description }}</p>
         </div>
+        {% for theme in themes %}
+            <div id="{{ theme.theme }}" class="tab-pane fade">
+                {% for formula in theme.formulas %}
+                    <h4>{{ formula.header }}</h4>
+                    <p>{{ formula.formula|linebreaks }}</p>
+                {% endfor %}
+            </div>
+        {% endfor %}
+    </div>
+    <div class="tab-content col-sm-6 col-md-5 col-lg-4">
+        {% for theme in themes %}
+            <div id="{{ theme.theme }}" class="tab-pane fade">
+                {% for formula in theme.formulas %}
+                    {% if formula.image %}
+                        <img src="{{ formula.image }}">
+                    {% endif %}
+                {% endfor %}
+            </div>
+        {% endfor %}
     </div>
 {% endblock %}
