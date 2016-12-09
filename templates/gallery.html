@@ -1,0 +1,35 @@
+{% extends 'base_art.html' %}
+{% block content %}
+    <div class="col-md-12 col-lg-offset-2 col-lg-8">
+        {% for picture in pictures %}
+            <div class="col-xs-12 col-sm-6 col-md-4">
+                <a href="#" data-toggle="modal" data-target=".{{ picture.name }}">
+                    <div class="thumbnail">
+                        <img src="{{ picture.url }}">
+                        <div class="caption">
+                            <h4>{{ picture.price }} ₽</h4>
+
+                        </div>
+                    </div>
+                </a>
+            </div>
+        {% endfor %}
+
+
+        {% for picture in pictures %}
+            <div class="modal {{ picture.name }}" tabindex="-1" role="dialog"
+                 aria-hidden="true">
+                <div class="modal-dialog modal-xl">
+                    <div class="modal-content">
+                        <div class="modal-body">
+                            <img src="{{ picture.url }}" width="100%">
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        {% endfor %}
+
+
+    </div>
+{% endblock %}
